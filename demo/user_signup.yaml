@@ -1,0 +1,64 @@
+module: demo.myapp.forms.user_signup
+show_progress: true
+steps:
+  - name: step_one
+    title: Step One
+    description: This is the first step of the user signup process.
+    fields:
+      - name: first_name
+        type: text
+        label: First Name
+        required: true
+      - name: last_name
+        type: text
+        label: Last Name
+        required: true
+      - name: username
+        type: text
+        label: Username
+        required: true
+      - name: password
+        type: password
+        label: Password
+        required: true
+      - name: confirm_password
+        type: password
+        label: Confirm Password
+        required: true
+        include:
+          - password
+      - type: raw_html
+        html: "<div class='signup-banner'><img src='/static/logo.svg' alt='Signup'></div>"
+      - name: promo
+        type: raw_input
+        html: "<label for='promo'>Promo Code</label><input id='promo' name='promo'>"
+  - name: step_two
+    title: Step Two
+    description: This is the second step of the user signup process.
+    fields:
+      - name: email
+        type: email
+        label: Email Address
+        required: true
+        validator: |
+          cleaned = value.strip()
+          if not cleaned:
+            raise ValidationError("Email required")
+          if "@" not in cleaned:
+            raise ValidationError("Invalid email")
+          return cleaned
+      - name: phone
+        type: text
+        label: Phone Number
+        required: true
+  - name: step_three
+    title: Step Three
+    description: This is the final step of the user signup process.
+    fields:
+      - name: terms
+        type: checkbox
+        label: I agree to the terms and conditions
+        required: true
+      - name: marketing
+        type: checkbox
+        label: Send me occasional product updates

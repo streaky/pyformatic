@@ -1,0 +1,6 @@
+<div class="{{ item_outer_classes }} demo-textbox">
+    <label for="{{ item_id }}">{{ item_label }}</label>
+    <input class="{{ item_input_classes }}" placeholder="{{ item_placeholder }}" type="{{ item_type }}" id="{{ item_id }}" name="{{ item_name }}" value="{{ item_value }}" {{ extra_attrs|safe }}>
+    <small class="validation-msg">{{ item_message }}</small>
+    {% if item_help %}<small class="help-text">{{ item_help }}</small>{% endif %}
+</div>

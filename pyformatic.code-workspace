@@ -1,0 +1,32 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "testing.coverageToolbarEnabled": true,
+        "testing.displayedCoveragePercent": "minimum",
+        "testing.showCoverageInExplorer": true,
+        "coverage-gutters.showGutterCoverage": true,
+        "coverage-gutters.coverageFileNames": [
+            "coverage.xml"
+        ],
+        "coverage-gutters.showLineCoverage": true,
+        "coverage-gutters.showRulerCoverage": true,
+        "python.testing.pytestArgs": [
+            "tests"
+        ],
+        "python.testing.unittestEnabled": true,
+        "python.testing.pytestEnabled": true
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-python.python",
+            "ryanluker.vscode-coverage-gutters",
+            "ms-vscode.test-adapter-converter",
+            "ms-vscode.test-explorer-ui",
+            "ms-vscode.test-explorer-python"
+        ]
+    }
+}

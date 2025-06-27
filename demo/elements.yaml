@@ -1,0 +1,84 @@
+module: null
+steps:
+  - name: elements
+    fields:
+      - name: search
+        type: search
+        label: Search
+        placeholder: Search
+      - name: text
+        type: text
+        label: Text
+        placeholder: Text
+      - name: select
+        type: select
+        label: Select
+        options:
+          - ["", "Select…"]
+          - ["1", "One"]
+          - ["2", "Two"]
+      - name: file
+        type: file
+        label: File browser
+      - name: range
+        type: range
+        label: Range slider
+        value: "50"
+        extra:
+          min: "0"
+          max: "100"
+      - name: valid
+        type: text
+        label: Valid
+        placeholder: Valid
+        extra:
+          aria-invalid: "false"
+      - name: invalid
+        type: text
+        label: Invalid
+        placeholder: Invalid
+        extra:
+          aria-invalid: "true"
+      - name: disabled
+        type: text
+        label: Disabled
+        placeholder: Disabled
+        extra:
+          disabled: disabled
+      - name: date
+        type: date
+        label: Date
+      - name: time
+        type: time
+        label: Time
+      - name: color
+        type: color
+        label: Color
+        value: "#0eaaaa"
+      - name: checkbox1
+        type: checkbox
+        label: Checkbox
+        value: on
+      - name: checkbox2
+        type: checkbox
+        label: Checkbox
+      - name: radio
+        type: radio
+        label: Radio button
+        value: radio1
+      - name: radio
+        type: radio
+        label: Radio button
+        value: radio2
+      - name: switch1
+        type: switch
+        label: Switch
+        value: on
+      - name: switch2
+        type: switch
+        label: Switch
+      - name: textarea
+        type: textarea
+        label: Textarea
+        placeholder: Textarea text
+        rows: 4

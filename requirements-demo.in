@@ -1,0 +1,8 @@
+
+-r requirements.in
+
+fastapi
+uvicorn
+itsdangerous
+python-multipart
+httpx

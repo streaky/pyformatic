@@ -1,0 +1,30 @@
+<div class="{{ item_outer_classes }}">
+    {% if item_raw_html %}
+    {{ item_raw_html|safe }}
+    {% elif item_type == 'checkbox' or item_type == 'radio' %}
+    <label for="{{ item_id }}">
+        <input class="{{ item_input_classes }}" type="{{ item_type }}" id="{{ item_id }}" name="{{ item_name }}" value="on"{% if item_value %} checked{% endif %} {{ extra_attrs|safe }}>
+        {{ item_label }}
+    </label>
+    {% elif item_type == 'switch' %}
+    <label for="{{ item_id }}">
+        <input class="{{ item_input_classes }}" type="checkbox" role="switch" id="{{ item_id }}" name="{{ item_name }}" value="on"{% if item_value %} checked{% endif %} {{ extra_attrs|safe }}>
+        {{ item_label }}
+    </label>
+    {% elif item_type == 'textarea' %}
+    <label for="{{ item_id }}">{{ item_label }}</label>
+    <textarea class="{{ item_input_classes }}" id="{{ item_id }}" name="{{ item_name }}" rows="{{ item_rows }}" placeholder="{{ item_placeholder }}" {{ extra_attrs|safe }}>{{ item_value }}</textarea>
+    {% elif item_type == 'select' %}
+    <label for="{{ item_id }}">{{ item_label }}</label>
+    <select class="{{ item_input_classes }}" id="{{ item_id }}" name="{{ item_name }}" {{ extra_attrs|safe }}>
+        {% for val, text in item_options %}
+        <option value="{{ val }}"{% if val == item_value %} selected{% endif %}>{{ text }}</option>
+        {% endfor %}
+    </select>
+    {% else %}
+    <label for="{{ item_id }}">{{ item_label }}</label>
+    <input class="{{ item_input_classes }}" placeholder="{{ item_placeholder }}" type="{{ item_type }}" id="{{ item_id }}" name="{{ item_name }}" value="{{ item_value }}" {{ extra_attrs|safe }}>
+    {% endif %}
+    <small class="validation-msg">{{ item_message }}</small>
+    {% if item_help %}<small class="help-text">{{ item_help }}</small>{% endif %}
+</div>

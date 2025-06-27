@@ -1,0 +1,9 @@
+
+-r requirements.in
+-r requirements-demo.in
+
+pytest
+pytest-cov
+pylint
+playwright
+pytest-playwright

@@ -1,0 +1,9 @@
+{% if error_fields %}
+<p class="error-banner" role="alert">Please check {{ error_fields|join(', ') }}</p>
+{% endif %}
+{% if show_progress %}
+<div class="progress-bar">Step {{ step_index + 1 }} of {{ total_steps }}</div>
+{% endif %}
+<link rel="stylesheet" href="/static/pyformatic.css">
+{{ form_html|safe }}
+<script src="/static/pyformatic.js"></script>
