@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    {{ pyformatic_header|safe }}
+    <style>
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .demo-textbox input {
+            border: 2px dashed #0ea5e9;
+        }
+        .password-field {
+            display: inline-block;
+            width: 48%;
+            margin-right: 2%;
+        }
+        .password-field:last-of-type {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <nav>
+        <ul>
+            <li><strong>Pyformatic Demo</strong></li>
+        </ul>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Signup</a></li>
+            <li><a href="/signup-python">Signup Python</a></li>
+            <li><a href="/elements">Elements</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block body %}{% endblock %}
+    </main>
+    </div>
+    {{ pyformatic_footer|safe }}
+</body>
+</html>

@@ -1,0 +1,14 @@
+module: demo.myapp.forms.user_signup
+steps:
+  - name: step_one
+    title: Step One
+    description: This is the first step of the user signup process.
+    fields:
+      - name: username
+        type: text
+        label: Username
+        required: true
+      - name: password
+        type: password
+        label: Password
+        required: true

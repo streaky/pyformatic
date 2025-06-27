@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyformatic"
+version = "0.1.1"
+description = "Python form rendering module."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+authors = [{name = "Unknown"}]
+urls = {"Source" = "https://github.com/streaky/pyformatic"}
+dependencies = ["jinja2", "pyyaml"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pyformatic"]
+
+[tool.setuptools.package-data]
+"pyformatic" = ["templates/**/*.html"]

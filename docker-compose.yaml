@@ -1,0 +1,13 @@
+
+services:
+
+  demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PYTHON_VERSION
+    env_file:
+      - .env
+    ports:
+      - 8000:8000
